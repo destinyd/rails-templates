@@ -2,11 +2,17 @@ generate :nifty_layout
 
 git :init
 
+gem "formtastic"
+rake "gems:install"
+generate :formtastic
+
+run 'sed -i "s/stylesheet_link_tag \'application\' /stylesheet_link_tag \'application\',\'formtastic\',\'formtastic_change\' /g" app/views/layouts/application.html.erb'
+
 run "echo 'TODO add readme content' > README"
 run "touch tmp/.gitignore log/.gitignore"
 run "cp config/database.yml config/example_database.yml"
-run "rm public/images/rails.png"
-run "rm public/index.html"
+git :rm => "public/images/rails.png"
+run :rm => "public/index.html"
 
 file ".gitignore", <<-END
 log/*.log
