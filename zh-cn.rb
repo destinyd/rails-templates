@@ -1,3 +1,2 @@
 load_template "http://github.com/destinyd/rails-templates/raw/master/base.rb"
-run "mkdir locals"
-run "curl http://github.com/destinyd/rails-templates/raw/master/locals/zh-cn.yml -o locals/zh-cn.yml"
+run "curl http://github.com/destinyd/rails-templates/raw/master/locales/zh-cn.yml -o config/locales/zh-cn.yml"
