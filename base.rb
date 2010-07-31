@@ -21,6 +21,7 @@ rake "gems:install",:sudo => true
 generate :formtastic
 
 plugin 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git'
+plugin 'validation_reflection',:git => 'git://github.com/redinger/validation_reflection.git'
 
 run 'sed -i "s/stylesheet_link_tag \'application\' /stylesheet_link_tag \'application\',\'formtastic\',\'formtastic_change\' /g" app/views/layouts/application.html.erb'
 
