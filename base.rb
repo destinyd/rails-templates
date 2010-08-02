@@ -9,15 +9,15 @@ run "rm public/robots.txt"
 run "rm public/images/rails.png"
 run "rm -f public/javascripts/*"
 # Download JQuery
-run "curl -s -L http://jqueryjs.googlecode.com/files/jquery-1.3.1.min.js > public/javascripts/jquery.js"
-run "curl -s -L http://jqueryjs.googlecode.com/svn/trunk/plugins/form/jquery.form.js > public/javascripts/jquery.form.js"
+run "curl -s -L http://code.jquery.com/jquery-1.4.2.min.js > public/javascripts/jquery.js"
+run "curl -s -L http://github.com/malsup/form/raw/master/jquery.form.js?v2.43 > public/javascripts/jquery.form.js"
 
 git :init
 
 run "touch tmp/.gitignore log/.gitignore vendor/.gitignore"
 
 gem "formtastic"
-rake "gems:install",:sudo => true
+rake "gems:install"#,:sudo => true
 generate :formtastic
 
 plugin 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git'
